@@ -1,3 +1,5 @@
+# Em Portugues
+
 from datetime import datetime
 
 # Definição das Constantes
