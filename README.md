@@ -1,5 +1,5 @@
 
-# Challenge-Banking-System
+# Banking-System-Challenge
 
 This is a DIO challenge for a banking system in Python, a simple program that simulates a basic banking system, allowing the user to perform some operations with their account.
 
