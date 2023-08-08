@@ -21,9 +21,9 @@ def realizar_deposito(saldo, valor, extrato, transacoes, /):
     if valor > 0:
         saldo += valor
         extrato += f"Depósito:\tR$ {valor:.2f}\n"
-        print("\n=== Depósito realizado com sucesso! ===")
+        print("\nDepósito realizado com sucesso!")
     else:
-        print("\n@@@ O valor informado é inválido. @@@")
+        print("\nO valor informado é inválido.")
     transacoes.append({"data": datetime.now(), "tipo": "Depósito", "valor": valor})
     return saldo, extrato
 
@@ -36,21 +36,21 @@ def realizar_saque(*, saldo, valor, extrato, limite, numero_saques, limite_saque
     transacoes.append({"data": datetime.now(), "tipo": "Saque", "valor": valor})
 
     if excedeu_saldo:
-        print("\n@@@ Você não tem saldo suficiente. @@@")
+        print("\nVocê não tem saldo suficiente.")
 
     elif excedeu_limite:
-        print("\n@@@ O valor do saque excede o limite. @@@")
+        print("\nO valor do saque excede o limite.")
 
     elif excedeu_saques:
-        print("\n@@@ Número máximo de saques excedido. @@@")
+        print("\nNúmero máximo de saques excedido.")
 
     elif valor > 0:
         saldo -= valor
         extrato += f"Saque:\t\tR$ {valor:.2f}\n"
         numero_saques += 1
-        print("\n=== Saque realizado com sucesso! ===")
+        print("\nSaque realizado com sucesso!")
     else:
-        print("\n@@@ O valor informado é inválido. @@@")
+        print("\nO valor informado é inválido.")
 
     return saldo, extrato
 
@@ -81,7 +81,7 @@ def criar_usuario(usuarios):
     usuario = filtrar_usuario(cpf, usuarios)
 
     if usuario:
-        print("\n@@@ Já existe usuário com esse CPF! @@@")
+        print("\nJá existe usuário com esse CPF!")
         return
 
     nome = input("Informe o nome completo: ")
@@ -106,10 +106,10 @@ def criar_conta(agencia, numero_conta, usuarios):
     usuario = filtrar_usuario(cpf, usuarios)
 
     if usuario:
-        print("\n=== Conta criada com sucesso! ===")
+        print("\nConta criada com sucesso!")
         return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
 
-    print("\n@@@ Usuário não encontrado, fluxo de criação de conta encerrado! @@@")
+    print("\nUsuário não encontrado, fluxo de criação de conta encerrado!")
 
 # Função Listar Conta
 
