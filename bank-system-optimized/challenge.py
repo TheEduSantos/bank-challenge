@@ -89,7 +89,7 @@ def create_user(users):
 
     users.append({"name": name, "birth_date": birth_date, "cpf": cpf, "address": address})
 
-    print("=== User created successfully! ===")
+    print("User created successfully!")
 
 # Filter User Function
 
