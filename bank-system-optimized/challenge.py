@@ -21,9 +21,9 @@ def make_deposit(balance, value, statement, transactions, /):
     if value > 0:
         balance += value
         statement += f"Deposit:\tR$ {value:.2f}\n"
-        print("\n=== Deposit successful! ===")
+        print("\nDeposit successful!")
     else:
-        print("\n@@@ Invalid value provided. @@@")
+        print("\Invalid value provided.")
     transactions.append({"date": datetime.now(), "type": "Deposit", "value": value})
     return balance, statement
 
@@ -36,21 +36,21 @@ def make_withdraw(*, balance, value, statement, limit, num_withdrawals, withdraw
     transactions.append({"date": datetime.now(), "type": "Withdrawal", "value": value})
 
     if exceeded_balance:
-        print("\n@@@ Operation failed! Insufficient balance. @@@")
+        print("\nOperation failed! Insufficient balance.")
 
     elif exceeded_limit:
-        print("\n@@@ Operation failed! The withdrawal amount exceeds the limit. @@@")
+        print("\nOperation failed! The withdrawal amount exceeds the limit.")
 
     elif exceeded_withdrawals:
-        print("\n@@@ Operation failed! Maximum number of withdrawals exceeded. @@@")
+        print("\nOperation failed! Maximum number of withdrawals exceeded.")
 
     elif value > 0:
         balance -= value
         statement += f"Withdrawal:\tR$ {value:.2f}\n"
         num_withdrawals += 1
-        print("\n=== Withdrawal successful! ===")
+        print("\nWithdrawal successful!")
     else:
-        print("\n@@@ Invalid value provided. @@@")
+        print("\nInvalid value provided.")
 
     return balance, statement
 
@@ -80,7 +80,7 @@ def create_user(users):
     user = filter_user(cpf, users)
 
     if user:
-        print("\n@@@ User with this CPF already exists! @@@")
+        print("\nUser with this CPF already exists!")
         return
 
     name = input("Enter the full name: ")
@@ -104,10 +104,10 @@ def create_account(agency, account_number, users):
     user = filter_user(cpf, users)
 
     if user:
-        print("\n=== Account created successfully! ===")
+        print("\nAccount created successfully!")
         return {"agency": agency, "account_number": account_number, "user": user}
 
-    print("\n@@@ User not found, account creation process terminated! @@@")
+    print("\nUser not found, account creation process terminated!")
 
 # List Accounts Function
 
